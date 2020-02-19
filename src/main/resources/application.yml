@@ -1,0 +1,18 @@
+spring:
+###### Email Properties ######
+    mail:
+      host: smtp.gmail.com
+      username: ahdesign602@gmail.com
+      password: 11/05/1925
+      port: 587
+      protocol: smtp
+      properties:
+        mail:
+          smtp:
+            auth: true
+            connectiontimeout: 5000
+            starttls:
+              enable: true
+              required: true
+            timeout: 5000
+            writetimeout: 5000   

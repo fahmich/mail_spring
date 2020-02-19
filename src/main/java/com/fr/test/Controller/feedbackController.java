@@ -1,19 +1,19 @@
-package com.fr.adaming.Controller;
+package com.fr.test.Controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import com.fr.adaming.mail.FeedbackSender;
+
+import com.fr.test.mail.FeedbackSender;
+import com.fr.test.model.feedbackViewModel;
+
 import javax.validation.ValidationException;
-import com.fr.adaming.dto.feedbackViewModel;
-/*
-Requests can be tested using the built in HTTP Rest Client. Use the
-examples found in 'noteit.http' file.
- */
 
 @RestController
 @RequestMapping("/api/feedback")
 @CrossOrigin("*")
 public class feedbackController {
+	@Autowired
 	private FeedbackSender feedbackSender;
 
 	public feedbackController(FeedbackSender feedbackSender) {

@@ -1,4 +1,4 @@
-package com.fr.adaming.dto;
+package com.fr.test.model;
 
 import javax.validation.constraints.NotNull;
 

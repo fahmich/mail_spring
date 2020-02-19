@@ -1,4 +1,4 @@
-package com.fr.adaming.mail;
+package com.fr.test.mail;
 
 import java.util.Properties;
 
@@ -18,7 +18,7 @@ public class FeedbackMailSender implements FeedbackSender {
 	@Override
 	public void sendFeedback(String from, String name, String feedback) {
 	        final String username = "fahmichibani@gmail.com";
-	        final String password = "*********";
+	        final String password = "klvtqvyljzozpamx";
  
             Properties prop = new Properties();
 			prop.put("mail.smtp.host", "smtp.gmail.com");
@@ -34,7 +34,7 @@ public class FeedbackMailSender implements FeedbackSender {
 	                });
 	        try {
 	            Message message = new MimeMessage(session);
-	            message.setFrom(new InternetAddress());        
+	            message.setFrom(new InternetAddress());       
 		       // message.setRecipients(Message.RecipientType.TO,InternetAddress.parse("fahmichii@yahoo.fr, fahmichibani@gmail.com"));
 		        message.setRecipients(Message.RecipientType.TO,InternetAddress.parse(from));
 		        System.out.println("ggg "+from);

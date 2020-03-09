@@ -18,7 +18,7 @@ public class FeedbackMailSender implements FeedbackSender {
 	@Override
 	public void sendFeedback(String from, String name, String feedback) {
 	        final String username = "fahmichibani@gmail.com";
-	        final String password = "klvtqvyljzozpamx";
+	        final String password = "z100klvtqvyljzozpamx";
  
             Properties prop = new Properties();
 			prop.put("mail.smtp.host", "smtp.gmail.com");

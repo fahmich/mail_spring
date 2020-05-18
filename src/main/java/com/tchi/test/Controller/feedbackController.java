@@ -1,16 +1,17 @@
-package com.fr.test.Controller;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
-
-import com.fr.test.mail.FeedbackSender;
-import com.fr.test.model.feedbackViewModel;
+package com.tchi.test.Controller;
 
 import javax.validation.ValidationException;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 @RestController
-@RequestMapping("/api/feedback")
+@RequestMapping("/send")
 @CrossOrigin("*")
 public class feedbackController {
 	@Autowired
@@ -29,8 +30,20 @@ public class feedbackController {
 		if (bindingResult.hasErrors()) {
 			throw new ValidationException("Feedback has errors; Can not send feedback;");
 		}
-
+	
+	    
 		this.feedbackSender.sendFeedback(feedbackViewModel.getEmail(), feedbackViewModel.getName(),
 				feedbackViewModel.getFeedback());
+	}	@PostMapping
+	public void sendemail(@RequestBody Email email) {
+		System.out.println(email);		 
+		System.out.println("email is using vlaue");
+		System.out.println(email.getTo());
+	 
+//		    private String to;
+//		    private String subject;
+//		    private String content;    
+		this.feedbackSender.sendFeedback(email.getTo(), email.getSubject(),email.getContent());
 	}
+  
 }

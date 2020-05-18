@@ -1,4 +1,4 @@
-package com.fr.test.mail;
+package com.tchi.test.Controller;
 
 import java.util.Properties;
 
@@ -18,7 +18,7 @@ public class FeedbackMailSender implements FeedbackSender {
 	@Override
 	public void sendFeedback(String from, String name, String feedback) {
 	        final String username = "fahmichibani@gmail.com";
-	        final String password = "z100klvtqvyljzozpamx";
+	        final String password = "-";
  
             Properties prop = new Properties();
 			prop.put("mail.smtp.host", "smtp.gmail.com");

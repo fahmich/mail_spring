@@ -1,4 +1,4 @@
-package com.fr.test.model;
+package com.tchi.test.Controller;
 
 import javax.validation.constraints.NotNull;
 
